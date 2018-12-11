@@ -1,0 +1,143 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway';    
+}
+
+/*MENU SUPERIOR*/
+.top-bar{
+    width: 100%;
+    height: 6em;
+    background-color: #0979E6;
+    display: flex;
+}
+
+.logo{
+    
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: .8em;
+    padding: .2em;
+}
+.menu{
+    flex: 3;
+
+}
+.menu ul{
+    list-style-type: none;
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+.menu ul li{
+    flex: 1;
+    text-align: center;
+}
+.menu ul a{
+    color: #000;
+    border-radius: 3px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1em;
+    padding: 1.4em 2em;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+.menu ul a:hover{
+    background-color: rgba(6, 18, 177, 0.377);
+    box-shadow: 0px 1px 5px #000;
+    }
+.menu ul p{
+    color: #000;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 0.8em 2em;
+}
+/*SEÇÃO CONTATO*/
+.contato{
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    background-image: url(../imagens/background-contact.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.contato h2{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    letter-spacing: .1em;
+    padding: .5em;
+    font-weight: bold;
+}
+
+/*ICONES E BOTÕES*/
+.redes-sociais{
+    height: 200px;
+}
+
+.icons{
+    flex: 3;
+    height: 100px;
+}
+.icons ul{
+    list-style-type: none;
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+.icons ul li{
+    flex: 1;
+    text-align: center;
+}
+.icons ul a{
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    padding: 0.8em 2em;
+}
+  
+
+.icons-text{
+    flex: 3;
+    height: 100px;
+}
+.icons-text ul{
+    list-style-type: none;
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+.icons-text ul li{
+    flex: 1;
+    text-align: center;
+}
+.icons-text ul a{
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-shadow: 0 0 3px #fff;
+    font-size: 1em;
+    padding: 0.8em 2em;
+}
+
+/*CONFIGS*/
+.fullscreen{
+    height: 100vh;
+}
+.quebra{
+    width: 100%;
+    height: 12px;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.quebra img{
+    width: 50px;
+    height: 50px;
+    transform: translateY(-7px);
+}

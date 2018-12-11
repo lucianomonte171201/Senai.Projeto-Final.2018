@@ -1,0 +1,163 @@
+@if(@ViewBag.UsuarioLogado == null){
+        Layout = "MasterPageDeslogado";
+} else {
+    if (@ViewBag.AdminBool == true)
+    {
+        Layout = "MasterPageAdministrador";
+    } else {
+        Layout = "MasterPageLogado";
+    }
+}
+
+@section styles{
+    <link rel="stylesheet" href="/css/home.css">
+}
+    
+    <main>
+        <!--BANNER-->
+        <div class="banner fullscreen">
+            <div class="banner-text">
+                <h2>O que é o Check Point?</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae dolorem debitis, sequi dolore
+                    voluptates illo,
+                    magnam doloremque ut aliquid quia fugiat inventore veniam incidunt quam quasi velit? Laudantium,
+                    cumque
+                    voluptatem. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae dolorem debitis, sequi
+                    dolore
+                    voluptates illo, magnam doloremque ut aliquid quia fugiat inventore veniam incidunt quam quasi
+                    velit?
+                    Laudantium, cumque. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae dolorem debitis,
+                    sequi
+                    dolore voluptates illo, magnam doloremque ut aliquid quia fugiat inventore veniam incidunt quam
+                    quasi
+                    velit? Laudantium, cumque voluptatem. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Quae
+                    dolorem debitis, sequi dolore voluptates illo, magnam doloremque ut aliquid quia fugiat inventore
+                    veniam
+                    incidunt quam quasi velit? Laudantium, cumque.
+                </p>
+            </div>
+        </div>
+
+        <div class="quebra">
+            <img src="/imagens/location_icon.png" alt="">
+        </div>
+
+        <!--PLANOS-->
+        <section class="planos fullscreen">
+            <h2>Planos</h2>
+            <div class="planos-itens">
+                <!--ITEM 1-->
+                <div class="quadrado">
+                    <div class="opacity">
+                        <article class="planos-item">
+                            <h3>Plano Free
+                            </h3>
+                            <img src="/imagens/Logo Checkpoint.png" alt="">
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae dolorem debitis, sequi
+                                dolore
+                                voluptates illo, magnam doloremque ut aliquid quia. Lorem ipsum dolor, sit amet
+                                consectetur
+                                adipisicing elit. Quae dolorem debitis.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+
+                <!--ITEM 2-->
+                <div class="quadrado">
+                    <div class="opacity">
+                        <article class="planos-item">
+                            <h3>Plano Pro
+                                <br> R$19,90
+                            </h3>
+                            <img src="/imagens/Logo Checkpoint.png" alt="">
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae dolorem debitis, sequi
+                                dolore
+                                voluptates illo, magnam doloremque ut aliquid quia. Lorem ipsum dolor, sit amet
+                                consectetur
+                                adipisicing elit. Quae dolorem debitis, sequi dolore voluptates illo, magnam doloremque
+                                ut
+                                aliquid quia. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae dolorem
+                                debitis.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+                <!--ITEM 3-->
+                <div class="quadrado">
+                    <div class="opacity">
+                        <article class="planos-item">
+                            <h3>Plano Premium R$199,90</h3>
+                            <img src="/imagens/Logo Checkpoint.png" alt="">
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae dolorem debitis, sequi
+                                dolore
+                                voluptates illo, magnam doloremque ut aliquid quia. Lorem ipsum dolor, sit amet
+                                consectetur
+                                adipisicing elit. Quae dolorem debitis, sequi dolore voluptates illo, magnam doloremque
+                                ut
+                                aliquid quia. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae dolorem
+                                debitis,
+                                sequi dolore voluptates illo, magnam doloremque ut.
+                           </p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    <div class="comentarios">
+        <h2>Comentários</h2>
+        <br>
+        <div class="comentarios-itens">
+
+
+        @using Senai.Comentarios.Final.Models;
+        @using System.Collections.Generic;
+
+        @{
+            List<ComentarioModel> ComentariosAprovados = (List<ComentarioModel>) @ViewData["ComentariosAprovados"];
+        }
+
+        @if(ComentariosAprovados.Count == 0)
+        {
+            <div class="semComentarios">
+                <h3>Os comentários enviados aparecerão aqui!</h3>
+            </div>
+        } else {
+            foreach(ComentarioModel comentario in @ViewData["ComentariosAprovados"] as List<ComentarioModel>)
+        {   
+                <div class="comComentarios">
+                    <h3>@comentario.Usuario.Nome</h3>
+                    <h4>@comentario.Data<h4>
+                    <p>@comentario.Texto</p>
+                </div>
+            }
+        }
+        
+
+
+        @if (@ViewBag.UsuarioLogado != null){
+
+
+            <h2 >@TempData["Mensagem"]</h2>
+            <h2 >Comente!</h2>
+
+            <form class="caixaDeTexto" action="/Comentario/Cadastrar" method="POST">
+                <h3>@ViewBag.UsuarioLogado,</h3>
+                <textarea cols="30" rows="10" placeholder="Digite aqui..." name="comentario"></textarea>
+
+                <input type="hidden" name="id" value="@ViewBag.UsuarioId">
+                <button class="botaoEnviar" type="submit">Enviar</button>
+            </form>
+        }else{
+            <h2>Comente!</h2>
+            <form class="caixaDeTexto">
+            <h3>Faça o login para comentar!</h3>
+            <textarea disabled placeholder="Faça login para enviar seu comentário..." name="comentario"></textarea>
+            <input type="button" onclick="location.href='/Usuario/Login';" value="Login">
+        </form>
+        }
+        </div>
+    </div>
+    </main>
+    

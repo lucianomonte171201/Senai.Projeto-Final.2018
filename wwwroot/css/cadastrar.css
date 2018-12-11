@@ -1,0 +1,55 @@
+.efetuarcadastro{
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    margin-right: 15.5em;
+}
+
+
+.cadastro{
+    padding-left: 15.5em;
+}
+.cadastro h2{
+    text-align: center;
+    font-weight: 400;
+    font-size: 2.3em;
+    padding: 0.5em;
+    padding-bottom: 1em;
+}
+.cadastro form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.cadastro label{
+    text-align: start;
+}
+.cadastro form input{
+    width: 20em;
+    height: 3em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.cadastro button{
+    width: 30%;
+    height: 2em;
+    background: #0979E6;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    margin-top: 0.5em;
+}
+.cadastro button:hover{
+    background: #0A2986;
+    box-shadow: 0px 1px 5px #000;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+.opcao-label{
+    display: flex;
+}
+.opcao-label input[type="radio"]{
+    width: 15px;
+    height: 15px;
+    margin-top: 0.2em;
+    margin-left: 0.5em;
+}

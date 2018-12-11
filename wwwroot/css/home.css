@@ -1,0 +1,175 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway';    
+}
+
+/*BANNER*/
+.banner{
+    background-image: url(../imagens/banner-novo.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.banner-text{
+    color: #000;
+    text-align: center;
+}
+.banner-text h2{
+    font-size: 2.2em;
+    letter-spacing: .1em;
+    text-shadow: 0 0 5px #fff;
+    text-transform: uppercase;
+}
+
+.banner-text p{
+    font-size: 1.3em;
+    text-shadow: 0 0 7px #fff;
+    padding: 2em;
+    letter-spacing: .2em;
+}
+
+
+/*PLANOS*/
+.planos{
+    text-align: center;
+    width: 100%;
+    padding: 2em;
+    background-color: #0979E6;
+}
+.planos h2{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 2em;
+    letter-spacing: .1em;
+    padding: .5em;
+    font-weight: bold;
+}
+
+.planos-itens{
+    display: flex;
+    padding: 2em;
+    justify-content: space-around;
+}
+.planos-item{
+    max-width: 300px;
+}
+
+.planos-item p{
+    padding-top: 2em;
+    color: #fff;
+    text-shadow: 0 0 10px #000;
+}
+
+.planos-item h3{
+    font-size: 1.5em;
+    padding: 0.5em;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: .1em;
+}
+
+/*ESTILIZANDO BACKGROUND-PLANOS*/
+.quadrado{
+    width: 350px;
+    height: 500px;
+    background-image: url(../imagens/background-image.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    border: 5px solid #000;
+    border-radius: 6px;
+}
+.opacity{
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 350px;
+    display: flex;
+    justify-content: center;
+
+}
+
+/*COMENTÁRIOS*/
+.comentarios{
+    background-color: white;
+    padding: 4em 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.comentarios img{
+    width: 2em;
+    height: 2em;
+}
+.comentarios h2{
+    font-size: 1.6em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.5em;
+}
+.comentarios-itens{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 2em;
+}
+.comentarios-itens form{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.comentarios-itens form input[type="button"]{
+    width: 20%;
+    margin: auto;
+    margin-top: 2em;
+    background: #0A2986;
+    border: none;
+    color: #fff;
+}
+.comentarios-itens form input{
+    height: 1.5em;
+    border-radius: 5px;
+    font-size: 1.5em;
+    box-shadow: 0 0 0.2em #000;
+}
+.comentarios-itens form input:hover{
+    background: #03164E;
+    box-shadow: 0 0 0 #000;
+}
+
+.comentarios-itens textarea{
+    height: 10em;
+    border-radius: 5px;
+    border-color: #0979E6;
+    resize: none;
+}
+.caixaDeTexto button{
+    width: 20%;
+    margin: auto;
+    margin-top: 2em;
+    background: #0979E6;
+    border: none;
+    color: #fff;
+    height: 1.5em;
+    border-radius: 5px;
+    font-size: 1.5em;
+    box-shadow: 0 0 0.2em #000;
+}
+.caixaDeTexto button:hover{
+    background: #0A2986;
+}
+.comComentarios{
+    padding: 0.5em;
+    border: 0.1em solid #000;
+    border-radius: 0.3em;
+}
+::-webkit-input-placeholder {
+    color: #0979E6;
+    letter-spacing: 0.1em;
+ }
+

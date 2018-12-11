@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Check Point</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/css/style.css" rel="stylesheet">
+    @RenderSection("styles", required: false)
+
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
+<body>
+    <!--TOPO-->
+<header class="top-bar">
+    <div class="logo">
+        <img src="/imagens/Logo Checkpoint.png" alt="Logo">
+    </div>
+    <nav id="menuTopo" class="menu">
+        <ul>
+            <li>
+                <a href="/Pages/Home">Home</a>
+            </li>
+            <li>
+                <a href="/Pages/Sobre">Sobre</a>
+            </li>
+            <li>
+                <a href="/Pages/Formulario">Formulário/FAQ</a>
+            </li>
+            <li>
+                <a href="/Usuario/Cadastrar">Cadastro</a>
+            </li>
+            <li>
+                <a href="/Usuario/Login">Login</a>
+            </li>
+            <li>
+                <p>Tel: XXXX-XXXX</p>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+@RenderBody()
+
+<!--CONTATO-->
+<footer class="contato">
+    <h2>Contato</h2>
+    <div class="redes-sociais">
+        <nav class="icons">
+            <ul>
+                <li>
+                    <img style="width: 60px; height: 60px;" src="/imagens/twitter-icon.png" alt="">
+                </li>
+                <li>
+                    <img style="width: 50px; height: 50px;" src="/imagens/instagram-icon.png" alt="">
+                </li>
+                <li>
+                    <img style="width: 73px; height: 73px;" src="/imagens/facebook-icon.png" alt="">
+                </li>
+            </ul>
+        </nav>
+        <nav id="menuIcons" class="icons-text">
+            <ul>
+                <li>
+                    <a href="https://twitter.com/">Twitter</a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/?hl=pt-br">Instagram</a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/">Facebook</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</footer>
+
+</body>
+</html>

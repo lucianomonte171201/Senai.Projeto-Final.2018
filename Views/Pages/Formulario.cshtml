@@ -1,0 +1,90 @@
+@if(@ViewBag.UsuarioLogado == null){
+        Layout = "MasterPageDeslogado";
+} else {
+    if (@ViewBag.AdminBool == true)
+    {
+        Layout = "MasterPageAdministrador";
+    } else {
+        Layout = "MasterPageLogado";
+    }
+}
+
+
+    <link rel="stylesheet" href="/css/formulario.css">
+    
+
+<body>
+    
+    <main>
+        <!--SEÇÃO DÚVIDAS-->
+        <section class="duvidas fullscreen">
+            <!--TOPO - DÚVIDAS-->
+            <div class="top-duvidas">
+                <div class="duvidas-title">
+                    <h2>Dúvidas</h2>
+                </div>
+                <div class="quebra">
+                    <img src="/imagens/location_icon.png" alt="">
+                </div>
+            </div>
+            <!--CONTEÚDO - DÚVIDAS-->
+            <div class="quadrados">
+                <div class="quadrado">
+                    <h3>Planos
+                        <img style="width: 25px; height: 25px; transform: translateX(10.2em) rotateY(180deg);" src="/imagens/Seta (1).png" alt="">
+                    </h3>
+                    <h3>Como comprar?
+                        <img style="width: 25px; height: 25px; transform: translateX(7.9em);" src="/imagens/Seta (1).png" alt="">
+                    </h3>
+                    <h3>Cancelamento do Plano
+                        <img style="width: 25px; height: 25px;" src="/imagens/Seta (1).png" alt="">
+                    </h3>
+                    <h3 style="text-transform: lowercase;">lorem ipsum
+                        <img style="width: 25px; height: 25px; transform: translateX(9.4em);" src="/imagens/Seta (1).png" alt="">
+                    </h3>
+                    <h3 style="text-transform: lowercase;">lorem ipsum
+                        <img style="width: 25px; height: 25px; transform: translateX(9.4em);" src="/imagens/Seta (1).png" alt="">
+                    </h3>
+                    <h3 style="text-transform: lowercase;">lorem ipsum
+                        <img style="width: 25px; height: 25px; transform: translateX(9.4em);" src="/imagens/Seta (1).png" alt="">
+                    </h3>
+                    <h3 style="text-transform: lowercase;">lorem ipsum
+                        <img style="width: 25px; height: 25px; transform: translateX(9.4em);" src="/imagens/Seta (1).png" alt="">
+                    </h3>
+                    <h3 style="text-transform: lowercase;">lorem ipsum
+                        <img style="width: 25px; height: 25px; transform: translateX(9.4em);" src="/imagens/Seta (1).png" alt="">
+                    </h3>
+                </div>
+                <div class="quadrado2">
+                    <h3>Como funcionam os planos?
+                    </h3>
+                    <h3>Posso trocar de plano?
+                    </h3>
+                    <h3>lorem ipsum
+                    </h3>
+                    <h3>lorem ipsum
+                    </h3>
+                    <h3>lorem ipsum
+                    </h3>
+                </div>
+            </div>
+        </section>
+        <div class="quebra">
+            <img src="/imagens/location_icon.png" alt="">
+        </div>
+        <!--FORMULÁRIO-->
+        <section class="formulario fullscreen">
+            <h2>Formulário</h2>
+            <div class="formulario-itens">
+                <form action="#">
+                    <input type="text" placeholder="Digite seu nome...">
+                    <input type="text" placeholder="Digite seu E-mail">
+                    <textarea cols="30" rows="10" placeholder="Digite sua mensagem..."></textarea>
+                    <input type="button" value="Enviar">
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

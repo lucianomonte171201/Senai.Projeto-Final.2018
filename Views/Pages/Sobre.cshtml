@@ -1,0 +1,64 @@
+@if(@ViewBag.UsuarioLogado == null){
+        Layout = "MasterPageDeslogado";
+} else {
+    if (@ViewBag.AdminBool == true)
+    {
+        Layout = "MasterPageAdministrador";
+    } else {
+        Layout = "MasterPageLogado";
+    }
+}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/sobre.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <section class="nossa-historia">
+            <h2>Nossa História</h2>
+            <div class="historia-cont">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit quas quasi molestias tenetur veritatis,
+                    saepe ullam dicta. Esse, quasi consequuntur. Officia blanditiis odit, autem dignissimos ea aperiam quaerat
+                    laudantium beatae?Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium porro illo aperiam
+                    maiores adipisci, ut facere a odio molestias explicabo sunt voluptatibus vero! Enim non aliquam, tempore
+                    ipsa delectus repellendus?</p>
+                <img style="width: 500px; height: 300px;" src="/imagens/nossa-historia-img.jpg" alt="">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores ratione amet modi doloremque facere architecto
+                    sint. Fuga, natus cumque. Totam delectus voluptates odit quod eaque? Odio praesentium nisi possimus doloremque.
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores ratione amet modi doloremque facere
+                    architecto sint. Fuga, natus cumque. Totam delectus voluptates odit quod eaque? Odio praesentium nisi
+                    possimus doloremque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex aperiam laborum est
+                    repellendus eveniet nam nulla quasi cupiditate, quisquam magni suscipit enim excepturi accusantium natus
+                    corrupti hic fuga nihil quis.</p>
+            </div>
+        </section>
+
+        <div class="quebra">
+            <img src="/imagens/location_icon.png" alt="">
+        </div>
+
+        <section class="galeria">
+            <h2>Galeria</h2>
+            <div class="fotos-cima">
+                <img src="/imagens/galeria-1.jpg" alt="">
+                <img src="/imagens/galeria-2.jpg" alt="">
+                <img src="/imagens/galeria-3.jpg" alt="">
+            </div>
+            <div class="fotos-baixo">
+                <img src="/imagens/galeria-4.jpg" alt="">
+                <img src="/imagens/galeria-5.jpg" alt="">
+                <img src="/imagens/galeria-6.jpg" alt="">
+            </div>
+        </section>
+    </main>
+    
+</body>
+
+</html>

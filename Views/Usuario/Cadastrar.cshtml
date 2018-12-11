@@ -1,0 +1,53 @@
+@if(@ViewBag.UsuarioLogado == null){
+        Layout = "MasterPageDeslogado";
+} else {
+    if (@ViewBag.AdminBool == true)
+    {
+        Layout = "MasterPageAdministrador";
+    } else {
+        Layout = "MasterPageLogado";
+    }
+}
+
+
+<link rel="stylesheet" href="/css/cadastrar.css">
+
+
+<main>
+        <section class="efetuarcadastro">
+            
+            <div class="cadastro">
+                <h2>Crie sua conta</h2>
+                <form action="/Usuario/Cadastrar" method="POST">
+
+                    <p>@ViewBag.Mensagem</p>
+                    <p>@TempData["Mensagem"]</p>
+
+                    <label>Nome</label>
+                    <input type="text" placeholder="Digite o seu nome" name="nome" required>
+                    <br>
+                    <label>Email</label>
+                    <input type="text" placeholder="Digite seu e-mail" name="email" required>
+                    <br>
+                    <label>Senha</label>
+                    <input type="password" placeholder="Digite sua senha" name="senha" required>
+                    <br>
+
+                    @if (@ViewBag.AdminBool == true)
+                        {
+                            <label>Selecione o tipo de usuário a ser cadastrado</label>
+                            
+                            <label class="opcao-label">Administrador
+                                <input name="tipo" type="radio" value="true" checked>
+                            </label>
+
+                            <label class="opcao-label">Comum
+                                <input name="tipo" type="radio" value="false">
+                            </label>
+                        }
+
+                    <button type="submit">Cadastrar</button>
+                </form>
+            </div>
+        </section>
+    </main>

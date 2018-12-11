@@ -1,0 +1,91 @@
+@using Senai.Comentarios.Final.Models;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Check Point</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/gerenciar.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
+<body>
+    <!--TOPO-->
+<header class="top-bar">
+    <div class="logo">
+        <img src="/imagens/Logo Checkpoint.png" alt="Logo">
+    </div>
+    <nav id="menuTopo" class="menu">
+        <ul>
+            <li>
+                <p class="usuarioLogado" href="/Pages/Home">@ViewBag.UsuarioLogado</p>
+            </li>
+            <li>
+                <a href="/Pages/Home">Voltar para home</a>
+            </li>
+            <li>
+                <a href="/Usuario/Cadastrar">Cadastrar Usuário</a>
+            </li>
+            <li>
+                <a href="/Usuario/Sair">Sair</a>
+            </li>
+            
+                <p>Tel: XXXX-XXXX</p>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section class="topoAdmin">
+        <h1>Página de Administrador</h1>
+        <h3>Gerenciamento de comentários</h3>
+    </section>
+
+    <section id="comentarios">
+            <h2>@ViewBag.Mensagem</h2>
+
+            <div class="comentarios-container">
+                @{
+                    List<ComentarioModel> ComentariosEmEspera = (List<ComentarioModel>) @ViewData["ComentariosEmEspera"];
+                }
+
+                @if (ComentariosEmEspera.Count == 0)
+                {
+                    <div class="comentarios-container-item">
+                        <h3>Não há comentários em espera</h3>
+                    </div>
+                } else {
+                    foreach(ComentarioModel comentario in @ViewData["ComentariosEmEspera"] as List<ComentarioModel>)
+                    {
+                        <form class="aprovar-rejeitar" action="/Comentario/Gerenciar" method="POST">
+                          <div class="comentarios-container-item">
+                                <input type="hidden" name="comentarioId" value="@comentario.Id">
+                               <h3>@comentario.Usuario.Nome</h3>
+                               <h4>@comentario.Data</h4>
+                                <p>@comentario.Texto</p>
+                         </div>
+                         <label>
+                             Aceitar
+                              <button type="submit" name="opcao" value="aceito"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="50" height="50"
+viewBox="0 0 224 224"
+style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,224v-224h224v224z" fill="none"></path><g fill="#2ecc71"><g id="surface1"><path d="M174.72,17.92h-125.44c-17.29,0 -31.36,14.07 -31.36,31.36v125.44c0,17.29 14.07,31.36 31.36,31.36h125.44c17.29,0 31.36,-14.07 31.36,-31.36v-125.44c0,-17.29 -14.07,-31.36 -31.36,-31.36zM103.425,154.315l-43.3125,-40.3725l6.1075,-6.5625l36.435,33.985l59.6925,-70.4375l6.825,5.7925z"></path></g></g></g></svg></button>
+                          </label>
+
+                           <label>
+                               Recusar
+                               <button type="submit" name="opcao" value="recusado"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="50" height="50"
+viewBox="0 0 224 224"
+style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,224v-224h224v224z" fill="none"></path><g fill="#e74c3c"><path d="M183.68,17.92h-143.36c-12.3648,0 -22.4,10.0352 -22.4,22.4v143.36c0,12.3648 10.0352,22.4 22.4,22.4h143.36c12.3648,0 22.4,-10.0352 22.4,-22.4v-143.36c0,-12.3648 -10.0352,-22.4 -22.4,-22.4zM155.5008,149.1392l-6.3616,6.3616l-37.1392,-37.1392l-37.1392,37.1392l-6.3616,-6.3616l37.1392,-37.1392l-37.1392,-37.1392l6.3616,-6.3616l37.1392,37.1392l37.1392,-37.1392l6.3616,6.3616l-37.1392,37.1392z"></path></g></g></svg></button>
+                         </label>
+                      </form>
+                    }
+                }
+            </div>
+        </section>
+</main>
+</body>
+</html>

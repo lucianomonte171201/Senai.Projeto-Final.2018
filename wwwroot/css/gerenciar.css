@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway';    
+}
+#comentarios{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.topoAdmin h1{
+    padding-top: 1em;
+    text-align: center;
+}
+.topoAdmin h3{
+    padding: 1em;
+    text-align: center;
+}
+
+.comentarios-container-item{
+    padding: 1em;
+    border: 0.1em solid #000;
+    border-radius: 0.3em;
+}
+
+.comentarios-container button {
+    background: none;
+    border: none;
+}
+.comentarios-container button svg{
+    width: 20px;
+    height: 20px;
+    transform: translateY(-1.5em);
+    
+}
+.comentarios-container button svg:hover{
+    box-shadow: 0 0 0.1em #000;
+}
+.aprovar-rejeitar label{
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.3em;
+}
+
